@@ -1008,3 +1008,4 @@ In this exercise, you wrote C\# code to manipulate Azure Storage blobs in an Azu
 #### Review
 
 In this exercise, you cleaned up your subscription by removing the **resource groups** used in this lab.
+
