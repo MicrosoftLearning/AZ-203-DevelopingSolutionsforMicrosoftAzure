@@ -627,6 +627,8 @@ In this exercise, you securely used a service identity to read the value of a se
 1.  The **Run** method should now look like this:
 
     ```
+    #r "Microsoft.WindowsAzure.Storage"
+    
     using System.Net;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.WindowsAzure.Storage;
@@ -659,6 +661,8 @@ In this exercise, you securely used a service identity to read the value of a se
 1.  The **Run** method should now look like this:
 
     ```
+    #r "Microsoft.WindowsAzure.Storage"
+    
     using System.Net;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.WindowsAzure.Storage;
@@ -693,6 +697,8 @@ In this exercise, you securely used a service identity to read the value of a se
 1.  The **Run** method should now look like this:
 
     ```
+    #r "Microsoft.WindowsAzure.Storage"
+    
     using System.Net;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.WindowsAzure.Storage;
