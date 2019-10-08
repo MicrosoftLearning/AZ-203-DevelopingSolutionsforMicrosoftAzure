@@ -553,7 +553,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
 1.  In the open command prompt, enter the following command and press Enter to create a new .NET project named **AdventureWorks.Migrate** in a folder with the same name:
 
     ```
-    dotnet new console --name AdventureWorks.Migrate --langVersion preview
+    dotnet new console --name AdventureWorks.Migrate --langVersion 7.1
     ```
 
     > **Note**: The ``dotnet new`` command will create a new **console** project in a folder with the same name as the project.
@@ -786,7 +786,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
 1.  Within the **foreach** loop contained in **Main** method, add the following line of code to print out the **activity id** of each upsert operation:
 
     ```
-    await Console.Out.WriteLineAsync($"Upserted document [Activity Id: {document.ActivityId}]");
+    await Console.Out.WriteLineAsync($"Upserted document #{++count:000} [Activity Id: {document.ActivityId}]");
     ```
 
 1.  Back within the **Main** method (outside of the foreach loop), add the following line of code to print out the number of documents exported to **Azure Cosmos DB**:
