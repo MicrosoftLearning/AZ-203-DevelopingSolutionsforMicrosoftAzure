@@ -283,7 +283,7 @@ In this exercise, you created the resources that you will use for the remainder 
     ```cs
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);        
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);        
     }
     ```
 
@@ -298,7 +298,7 @@ In this exercise, you created the resources that you will use for the remainder 
     ```cs
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);   
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);   
         services.AddApplicationInsightsTelemetry(INSTRUMENTATION_KEY);        
     }
     ```
