@@ -21,7 +21,7 @@ Microsoft updates this training course as soon as the community brings needed ch
 #### Sign in to the lab virtual machine
 
 Sign in to your **Windows 10** virtual machine using the following credentials:
-    
+
 -   **Username**: Admin
 
 -   **Password**: Pa55w.rd
@@ -31,7 +31,7 @@ Sign in to your **Windows 10** virtual machine using the following credentials:
 #### Review installed applications
 
 Observe the taskbar located at the bottom of your **Windows 10** desktop. The taskbar contains the icons for the applications you will use in this lab:
-    
+
 -   Microsoft Edge
 
 -   File Explorer
@@ -73,13 +73,13 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     > **Note**: Each tab represents a step in the workflow to create a new **resource group**. At any time, you can select **Review + create** to skip the remaining tabs.
 
 1.  On the **Basics** tab, perform the following actions:
-    
+
     1.  Leave the **Subscription** text box set to its default value.
-    
+
     1.  In the **Resource group** text box, enter the value **ContainerCompute**.
-    
+
     1.  In the **Region** drop-down list, select the **(US) East US** location.
-    
+
     1.  Select **Review +** **Create**.
 
 1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
@@ -105,19 +105,19 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     > **Note**: Each tab represents a step in the workflow to create a new **virtual machine**. At any time, you can select **Review + create** to skip the remaining tabs.
 
 1.  In the **Basics** tab, perform the following actions:
-    
+
     1.  Leave the **Subscription** text box set to its default value.
-    
+
     1.  In the **Resource group** drop-down list, select the existing **ContainerCompute** option.
 
     1.  In the **Virtual machine name** text box, enter **simplevm**.
-    
+
     1.  In the **Region** drop-down list, select the **(US) East US** location.
 
     1. In the **Availability options** drop-down list, ensure **No infrastructure redundancy required** is selected.
-    
+
     1.  In the **Image** text box, make sure that the **Ubuntu Server 18.04 LTS** option is selected.
-    
+
     1.  In the **Size** text box, select the **Change size** link.
 
 1.  In the **Select a VM size** blade, perform the following actions:
@@ -165,11 +165,11 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 1.  In the **Virtual Machine** blade, select **Connect**.
 
 1.  In the **Connect to virtual machine** pop-up that appears, perform the following actions:
-    
+
     1.  In the **IP address** text box, select **Public IP address**.
-    
+
     2.  In the **Port number** text box, enter **22**.
-    
+
     3.  **Copy** the text in the **Login using VM local account** text box.
 
         > **Note**: The command that you copied will connect to the VM by using SSH from a remote computer. You will use this command later in the lab.
@@ -179,9 +179,9 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     > **Note**: The **Cloud Shell** icon is represented by a greater than symbol and underscore character.
 
 1.  If this is your first time opening the **Cloud Shell** by using your subscription, a **Welcome to Azure Cloud Shell Wizard** will appear that allows you to configure **Cloud Shell** for first-time usage. Perform the following actions in the wizard:
-    
+
     1.  A dialog box will appear that prompts you to create a new Storage Account to begin using the shell. Accept the default settings and select **Create storage**.
-    
+
     1.  Wait for the **Cloud Shell** to finish its first-time setup procedures before moving forward with the lab.
 
     > **Note**: If you do not see the configuration options for the **Cloud Shell**, this is most likely because you are using an existing subscription with this course's labs. The labs are written from the presumption that you are using a new subscription.
@@ -214,7 +214,7 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 In this exercise, you created a new VM manually by using the Azure portal interface and connected to the VM by using the Cloud Shell and SSH.
 
-### Exercise 2: Create a virtual machine by using Azure CLI 
+### Exercise 2: Create a virtual machine by using Azure CLI
 
 #### Task 1: Open Cloud Shell
 
@@ -249,15 +249,15 @@ In this exercise, you created a new VM manually by using the Azure portal interf
     ```
 
 1.  Type the following command and press Enter to create a new **virtual machine** with the following settings:
-    
+
       - **Resource group**: ContainerCompute
-    
+
       - **Name**: quickvm
-    
+
       - **Image**: Debian
-    
+
       - **Username**: Student
-    
+
       - **Password**: StudentPa55w.rd
 
     ```bash
@@ -376,7 +376,7 @@ In this exercise, you used the Azure Cloud Shell to create a VM as part of an au
     public class Program
     {
         public static void Main(string[] args)
-        {        
+        {
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
             {
                 System.Console.WriteLine("Current IP Addresses:");
@@ -539,7 +539,7 @@ In this exercise, you used the Azure Cloud Shell to create a VM as part of an au
 
 In this exercise, you created a .NET Core console application to display a machine’s current IP address. You then added the Dockerfile file to the application so that it could be converted into a Docker container image. Finally, you deployed the container image to Azure Container Registry.
 
-### Exercise 4: Deploy an Azure container instance 
+### Exercise 4: Deploy an Azure container instance
 
 #### Task 1: Enable Admin User in Azure Container Registry
 
@@ -552,11 +552,11 @@ In this exercise, you created a .NET Core console application to display a machi
 1.  In the **Container Registry** blade, select **Update** from the top of the blade.
 
 1.  In the **Update container registry** blade, perform the following actions:
-    
+
     1.  In the **Admin user** section, select **Enable**.
-    
+
     1.  Select **Save**.
-    
+
 1.  Close the **Update container registry** blade.
 
 #### Task 2: Deploy a container image automatically to an Azure Container instance
@@ -570,25 +570,25 @@ In this exercise, you created a .NET Core console application to display a machi
 1.  In the pop-up menu that appears, select the **Run instance** link.
 
 1.  In the **Create container instance** blade that appears, perform the following actions:
-    
+
     1.  In the **Container name** text boxtext box, enter **managedcompute**.
-    
+
     1.  Leave the **Container image** text box set to its default value.
-    
+
     1.  In the **OS type** section, select **Linux**.
-    
+
     1.  Leave the **Subscription** text box set to its default value.
-    
+
     1.  In the **Resource group** drop-down list, select **ContainerCompute**.
-    
+
     1.  In the **Location** drop-down list, select **East US**.
-    
+
     1.  In the **Number of cores** drop-down list, select **2**.
-    
+
     1.  In the **Memory (GB)** text box, enter **4**.
-    
+
     1.  In the **Public IP address** section, select **No**.
-    
+
     1. Select **OK**.
 
 1.  Wait for the creation task to complete before moving forward with this lab.
@@ -604,11 +604,11 @@ In this exercise, you created a .NET Core console application to display a machi
 1.  In the **Container Registry** blade, locate the **Settings** section and select the **Access keys** link.
 
 1.  In the **Access Keys** section, record the values for the following fields:
-    
+
     1.  **Login server**
-    
+
     1.  **Username**
-    
+
     1.  **Password**
 
         > **Note**: You will use these values later in this lab when you create another **container instance**.
@@ -632,13 +632,13 @@ In this exercise, you created a .NET Core console application to display a machi
     1. Leave the **Subscription** text box set to its default value.
 
     1. In the **Resource group** drop-down list, select **ContainerCompute**.
-    
+
     1.  In the **Container name** text box, enter **manualcompute**.
 
     1. In the **Region** drop-down list, select **(US) East US**.
-    
+
     1.  In the **Image type** section, select **Private**.
-    
+
     1.  In the **Image name** text box, enter the **Login server** value that you recorded earlier and then add the suffix /**ipcheck:latest**.
 
         > **Note**: For example, if your **Login server** value is **azadmin.azurecr.io**, then your container image name would be **azadmin.azurecr.io/ipcheck:latest**
@@ -662,25 +662,25 @@ In this exercise, you created a .NET Core console application to display a machi
         1. Leave the default value for the **GPU type** drop-down list.
 
         1. Select **Ok**.
-    
+
     1. Select **Next: Networking**
 
 1. In the **Networking** tab, perform the following actions:
-    
+
     1. In the **Include Public IP address** section, select **Yes**.
 
     1. Ensure in the **Ports** section, the port **80** is there, with the port protocol **TCP**.
-    
+
     1. Leave the **DNS name label** text box empty.
 
     1. Select **Next: Advanced**.
 
 1. In the **Advanced** tab, perform the following actions:
-    
+
     1. In the **Restart policy** drop-down list, select **On failure**.
-    
+
     1. Leave the **Environment variable** text box empty.
-    
+
     1. Leave the **Command override** text box empty.
 
     1. Select **Review + create**.
@@ -712,7 +712,7 @@ In this exercise, you created a .NET Core console application to display a machi
 
 In this exercise, you used multiple methods to deploy a container image to an Azure container instance. By using the manual method, you were also able to customize the deployment further and execute task-based applications as part of a container run.
 
-### Exercise 5: Clean up subscription 
+### Exercise 5: Clean up subscription
 
 #### Task 1: Open Cloud Shell and list resource groups
 

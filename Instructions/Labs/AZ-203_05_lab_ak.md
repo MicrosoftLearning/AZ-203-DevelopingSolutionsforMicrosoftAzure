@@ -21,7 +21,7 @@ Microsoft updates this training course as soon as the community brings needed ch
 #### Sign in to the lab virtual machine
 
 Sign in to your **Windows 10** virtual machine by using the following credentials:
-    
+
 -   **Username**: Admin
 
 -   **Password**: Pa55w.rd
@@ -31,7 +31,7 @@ Sign in to your **Windows 10** virtual machine by using the following credential
 #### Review installed applications
 
 Observe the taskbar located at the bottom of your **Windows 10** desktop. The taskbar contains the icons for the applications that you will use in this lab:
-    
+
 -   Microsoft Edge
 
 -   File Explorer
@@ -99,15 +99,15 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     > **Note**: Each tab represents a step in the workflow to create a new **Application Insights instance**. At any time, you can select **Review + create** to skip the remaining tabs.
 
 1.  In the **Basics** tab, perform the following actions:
-    
+
     1.  Leave the **Subscription** text box set to its default value.
-    
+
     1.  In the **Resource group** section, select **Create new**, enter **MonitoredAssets**, and then select **OK**.
-    
+
     1.  In the **Name** text box, enter **instrm\[your name in lowercase\]**.
-    
+
     1.  In the **Location** drop-down list, select the **(US) East US** region.
-    
+
     1.  Select **Review + Create**.
 
 1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
@@ -143,11 +143,11 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     > **Note**: Each tab represents a step in the workflow to create a new **Web App**. At any time, you can select **Review + create** to skip the remaining tabs.
 
 1.  In the **Basics** tab, perform the following actions:
-    
+
     1.  Leave the **Subscription** text box set to its default value.
-    
+
     1.  In the **Resource group** drop-down list, select **MonitoredAssets**.
-    
+
     1.  In the **Name** text box, enter **smpapi\[your name in lowercase\]**.
 
     1.  In the **Publish** section, select **Code**.
@@ -187,7 +187,7 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 1. In the **App Service** blade, on the left side of the blade, within the **Settings** category, select the **Configuration** link.
 
 1.  In the **Configuration** section, perform the following actions:
-    
+
     1.  Select the **Application settings** tab.
 
     1.  Select **Show Values** to view the secrets associated with your API.
@@ -203,23 +203,23 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 1.  In the **App Service** blade, on the left side of the blade, within the **Settings** category, select the **Scale out (App Service Plan)** link.
 
 1.  In the **Scale out** section, perform the following actions:
-    
+
     1.  Select **Custom autoscale**.
-    
+
     1.  In the **Autoscale setting name** field, enter **ComputeScaler**.
-    
+
     1.  In the **Resource group** list, select **MonitoredAssets**.
-    
+
     1.  In the **Scale mode** section, select **Scale based on a metric**.
-    
+
     1.  In the **Minimum** field within the **Instance limits** section, enter **2**.
-    
+
     1.  In the **Maximum** field within the **Instance limits** section, enter **8**.
-    
+
     1.  In the **Default** field within the **Instance limits** section, enter **3**.
-    
+
     1.  Select **+ Add a rule**. In the **Scale rule** popup that appears, leave all fields set to their default values and then select **Add**.
-    
+
     1.  At the top of the section, select **Save**.
 
 1.  Wait for the save operation to complete before you move forward with this lab.
@@ -257,7 +257,7 @@ In this exercise, you created the resources that you will use for the remainder 
     ```powershell
     dotnet build
     ```
-    
+
 #### Task 2: Update application code to disable HTTPS and use Application Insights
 
 1.  On the left side of the **Visual Studio Code** window, in the **Explorer** pane, double-click the **Startup.cs** file to open the file in the editor.
@@ -283,10 +283,22 @@ In this exercise, you created the resources that you will use for the remainder 
     ```cs
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);        
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);        
     }
     ```
 
+1.  Replace the following line of code:
+
+    ```cs
+    services.AddApplicationInsightsTelemetry(INSTRUMENTATION_KEY);
+    ```
+    
+    with a new line of code that updates the compatability version of the web application:
+    
+    ```cs
+    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);   
+    ```
+    
 1.  Add a new line of code at the end of the **ConfigureServices** method to configure Application Insights using the provided instrumentation key:
 
     ```cs
@@ -321,11 +333,11 @@ In this exercise, you created the resources that you will use for the remainder 
 1.  On the taskbar, select the **Microsoft Edge** icon.
 
 1.  In the open browser window, navigate to the **/api/values** relative path of your test application hosted at **localhost** on port **5000**.
-    
+
     > **Note**: The full URL is http://localhost:5000/api/values
 
 1.  In the same browser window, navigate to the **/api/values/7** relative path of your test application hosted at **localhost** on port **5000**.
-    
+
     >  **Note**: The full URL is http://localhost:5000/api/values/7
 
 1.  Close the browser window displaying the http://localhost:5000/api/values/7 address.
@@ -363,13 +375,13 @@ In this exercise, you created the resources that you will use for the remainder 
     ```
 
 1.  In the browser window that appears, perform the following actions:
-    
+
     1.  Enter the **email address** for your Microsoft account.
-    
+
     1.  Select **Next**.
-    
+
     1.  Enter the **password** for your Microsoft account.
-    
+
     1.  Select **Sign in**.
 
 1.  Return to the currently open **command prompt** application. Wait for the sign-in process to finish.
@@ -493,15 +505,15 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
     {
         private const string _api = "";
         private static HttpClient _client = new HttpClient(){ BaseAddress = new Uri(_api) };
-    
+
         static void Main(string[] args)
         {
             Run().Wait();
         }
-    
+
         static async Task Run()
         {
-    
+
         }
     }
     ```
@@ -541,16 +553,16 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
         {
             private const string _api = "http://<your-api-name>.azurewebsites.net/";
             private static HttpClient _client = new HttpClient(){ BaseAddress = new Uri(_api) };
-        
+
             static void Main(string[] args)
             {
                 Run().Wait();
             }
-        
+
             static async Task Run()
             {
                 string response = await _client.GetStringAsync("/api/values/");
-                Console.WriteLine(response);    
+                Console.WriteLine(response);
             }
         }
     }
@@ -625,7 +637,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 1.  Locate the **\_client** constant at line **10**:
 
     ```cs
-    private static HttpClient _client = new HttpClient(){ BaseAddress = new Uri(_api) }; 
+    private static HttpClient _client = new HttpClient(){ BaseAddress = new Uri(_api) };
     ```
 
 1.  Update the **\_client** constant by updating the **HttpClient** constructor to use a new instance of the **PollyHandler** class:
@@ -695,21 +707,21 @@ In this exercise, you created a console application to access your API by using 
 1.  In the **Performance test** section, at the top of the section, select **New**.
 
 1.  In the **New performance test** blade, perform the following actions:
-    
+
     1.  In the **Name** field, enter **LoadTest**.
-    
+
     1.  In the **Generate Load From** list, select **East US (Web app Location)**.
-    
+
     1.  In the **User Load** field, enter **1000**.
-    
+
     1.  In the **Duration** field, enter **10**.
-    
+
     1.  Select **Configure Test Using**.
 
 1.  In the **Configure test using** blade, perform the following actions:
-    
+
     1.  In the **Test Type** list, select **Manual Test**.
-    
+
     1.  In the **URL** field, update the URL by appending the suffix **/api/values** to the end of the current URL.
 
         > **Note**: For example, if your URL is http://smpapistudent.azurewebsites.net, the new URL would be http://smpapistudent.azurewebsites.net/api/values.
@@ -737,19 +749,19 @@ In this exercise, you created a console application to access your API by using 
 1.  In the **Monitor** blade, on the left side of the blade, select **Metrics**.
 
 1.  In the **Metrics** section, perform the following actions:
-    
+
     1.  In the **Resource** section, select **Select a resource**.
-    
+
     1.  In the **Select a resource** window that appears, in the **Resource group** list, select **MonitoredAssets**. Then, in the **Resource** list, select the **instrm\*** Application Insights account option. Finally, select **Apply** to close the window and confirm your selection.
-    
+
     1.  In the **Metric Namespace** list, in the **Standard** category, select **Standard metrics (preview)**.
-    
+
     1.  In the **Metric** list, in the **Performance Counter** category, select **Process CPU**.
-    
+
     1.  In the **Aggregation** list, select **Avg**.
-    
+
     1.  At the top of the section, select **Last 24 hours (Automatic - 5 minutes)**. In the window that appears, in the **Time range** category, select **Last 30 minutes** and then select **Apply** to save your selection.
-    
+
     1.  At the top of the section, select **Line chart**. In the menu that appears, select **Area chart**.
 
 1.  Observe your newly created chart.
@@ -757,11 +769,11 @@ In this exercise, you created a console application to access your API by using 
 1.  At the top of the section, select **Add metric**.
 
 1.  In the **Metrics** section, perform the following actions with the new metric item in the list:
-    
+
     1.  In the **Metric Namespace** list, in the **Standard** category, select **Log-based metrics**.
-    
+
     1.  In the **Metric** list, in the **Server** category, select **Server response time**.
-    
+
     1. In the **Aggregation** list, select **Avg**.
 
 1.  Observe your updated chart. Observe the information displayed in your chart. You can observe how the server response time correlates with the CPU time as load on the application increased.
@@ -770,7 +782,7 @@ In this exercise, you created a console application to access your API by using 
 
 In this exercise, you performed a performance (load) test of your Web App by using the tools available to you in Azure. After you performed the load test, you were able to measure your API app’s behavior by using metrics in the Azure Monitor interface.
 
-### Exercise 5: Clean up subscription 
+### Exercise 5: Clean up subscription
 
 #### Task 1: Open Cloud Shell
 
@@ -779,9 +791,9 @@ In this exercise, you performed a performance (load) test of your Web App by usi
     > **Note**: The **Cloud Shell** icon is represented by a greater than symbol and underscore character.
 
 1.  If this is your first time opening the **Cloud Shell** by using your subscription, a **Welcome to Azure Cloud Shell Wizard** will appear that allows you to configure **Cloud Shell** for first-time usage. Perform the following actions in the wizard:
-    
+
     1.  A dialog box will appear that prompts you to create a new Storage Account to begin using the shell. Accept the default settings and select **Create storage**.
-    
+
     1.  Wait for the **Cloud Shell** to finish its first-time setup procedures before moving forward with the lab.
 
     > **Note**: If you do not see the configuration options for the **Cloud Shell**, this is most likely because you are using an existing subscription with this course's labs. The labs are written from the presumption that you are using a new subscription.
@@ -805,7 +817,7 @@ In this exercise, you performed a performance (load) test of your Web App by usi
     ```powershell
     az group delete --name MonitoredAssets --no-wait --yes
     ```
-    
+
 1.  Close the **Cloud Shell** pane at the bottom of the portal.
 
 #### Task 3: Close active applications

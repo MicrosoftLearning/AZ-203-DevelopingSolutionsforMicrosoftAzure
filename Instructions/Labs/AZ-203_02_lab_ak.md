@@ -21,9 +21,9 @@ The Microsoft Worldwide Learning team updates this training course as soon as th
 #### Sign in to the lab virtual machine
 
 Sign in to your **Windows 10** virtual machine by using the following credentials:
-    
+
 -   **Username**: Admin
-    
+
 -   **Password**: Pa55w.rd
 
 > **Note**: Lab virtual machine sign-in instructions will be provided to you by your instructor.
@@ -31,7 +31,7 @@ Sign in to your **Windows 10** virtual machine by using the following credential
 #### Review installed applications
 
 Observe the taskbar located at the bottom of your **Windows 10** desktop. The taskbar contains the icons for the applications that you will use in this lab:
-    
+
 -   Microsoft Edge
 
 -   File Explorer
@@ -64,7 +64,7 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  Close the currently running **Windows PowerShell** command prompt application.
 
-### Exercise 1: Build a back-end API by using Azure Storage and API Apps
+### Exercise 1: Build a back-end API by using Azure Storage and Web apps
 
 #### Task 1: Open the Azure portal
 
@@ -97,23 +97,23 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     > **Note**: Each tab represents a step in the workflow to create a new **storage account**. At any time, you can select **Review + create** to skip the remaining tabs.
 
 1.  Select the **Basics** tab, and within the tab area, perform the following actions:
-    
+
     1.  Leave the **Subscription** field set to its default value.
-    
+
     1.  In the **Resource group** section, select **Create new**, enter **ManagedPlatform**, and then select **OK**.
-    
+
     1.  In the **Storage account** **name** field, enter **imgstor\[*your name in lowercase*\]**.
-    
+
     1.  In the **Location** list, select the **(US) East US** region.
-    
+
     1.  In the **Performance** section, select **Standard**.
-    
+
     1.  In the **Account kind** list, select **StorageV2 (general purpose v2)**.
-    
+
     1.  In the **Replication** list, select **Locally-redundant storage (LRS)**.
-    
+
     1.  In the **Access tier (default)** section, ensure that **Hot** is selected.
-    
+
     1.  Select **Review + Create**.
 
 1.  In the **Review + Create** tab, review the options that you specified in the previous steps.
@@ -143,11 +143,11 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 1.  In the **Containers** section, select **+ Container**.
 
 1.  In the **New container** window, perform the following actions:
-    
+
     1.  In the **Name** field, enter **images**.
-    
+
     1.  In the **Public access level** list, select **Blob (anonymous read access for blobs only)**.
-    
+
     1.  Select **OK**.
 
 1.  In the **Containers** section, select **+ Container** again.
@@ -176,67 +176,81 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1. Wait for the blob to be uploaded before you continue with this lab.
 
-#### Task 4: Create an API app
-
-1.  In the left navigation pane of the portal, select **+ Create a resource**.
+#### Task 4: Create a Web app
 
 1.  At the top of the **New** blade, locate the **Search the Marketplace** field.
 
-1.  In the search field, enter **API** and press Enter.
+1.  In the search field, enter **Web** and press Enter.
 
-1.  In the **Everything** search results blade, select the **API App** result.
+1.  In the **Everything** search results blade, select the **Web App** result.
 
-1.  In the **API App** blade, select **Create**.
+1.  In the **Web App** blade, select **Create**.
 
-1.  In the second **API App** blade, perform the following actions:
-    
+1.  In the second **Web App** blade, perform the following actions:
+
     1.  In the **App name** field, enter **imgapi\[*your name in lowercase*\]**.
-    
+
     1.  Leave the **Subscription** field set to its default value.
-    
+
     1.  In the **Resource group** section, select **Use existing**, and then select **ManagedPlatform**.
-    
-    1.  Leave the **App Service plan/Location** field set to its default value.
-    
-    1.  Leave the **Application Insights** field set to its default value.
-    
-    1.  Select **Create**.
+
+    1.  In the **Publish** section, select **Code**.
+
+    1.  In the **Runtime stack** section, select **.NET Core 2.2**.
+
+    1.  In the **OS** section, select **Windows**.
+
+    1. In the **Region** drop-down list, select **East US**
+
+    1.  Leave the **Windows Plan (East US)** field set to its default value.
+
+    1.  Leave the **Sku and size** field set to its default value.
+
+    1.  Select **Next: Monitoring**.
+
+1.  In the **Monitoring** tab, perform the following actions:
+
+    1.  In the **Enable Application Insights** section, select **No**.
+
+    1.  Select **Review + Create**.
+
+1. In the **Review and create** tab, observe the settings then click **Create**.
 
 1.  Wait for the creation task to complete before you move forward with this lab.
 
-#### Task 5: Configure an API app
+#### Task 5: Configure a Web app
 
 1.  In the left navigation pane of the portal, select **Resource groups**.
 
 1.  In the **Resource groups** blade, select the **ManagedPlatform** resource group that you created earlier in this lab.
 
-1.  In the **ManagedPlatform** blade, select the **imgapi\*** API app that you created earlier in this lab.
+1.  In the **ManagedPlatform** blade, select the **imgapi\*** Web app that you created earlier in this lab.
 
-1.  In the **API App** blade, on the left side of the blade in the **Settings** section, select the **Configuration** link.
+1.  In the **Web app** blade, on the left side of the blade in the **Settings** section, select the **Configuration** link.
 
 1.  In the **Configuration** section, perform the following actions:
-    
+
     1.  Select the **Application settings** tab.
-    
+
     1.  Select **+ New application setting**.
-    
+
     1.  In the **Add/Edit application setting** popup that appears, in the **Name** field, enter **StorageConnectionString**.
-    
+
     1.  In the **Value** field, enter the **Storage Connection String** you copied earlier in this lab.
-    
+
     1.  Leave the **deployment slot setting** field set to its default value.
 
     1.  Select **OK** to close the popup and return to the **Configuration** section.
-    
+
     1.  Select **Save** at the top of the blade to persist your settings.
 
 1.  Wait for your application settings to persist before you move forward with the lab.
 
-1.  In the **API App** blade, on the left side of the blade in the **Settings** section, select the **Properties** link.
+1.  In the **Web app** blade, on the left side of the blade in the **Settings** section, select the **Properties** link.
 
 1.  In the **Properties** section, copy the value of the **URL** field. You will use this value later in the lab.
 
-#### Task 6: Deploy an ASP.NET Core web application to API App
+#### Task 6: Deploy an ASP.NET Core web application to Web app
 
 1.  On the taskbar, select the **Visual Studio Code** icon.
 
@@ -261,13 +275,13 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     ```
 
 1. In the **Microsoft Edge** browser window that appears, perform the following actions:
-    
+
     1.  Enter the **email address** for your Microsoft account.
-    
+
     2.  Select **Next**.
-    
+
     3.  Enter the **password** for your Microsoft account.
-    
+
     4.  Select **Sign in**.
 
 1. Return to the currently open **Command Prompt** application. Wait for the sign-in process to finish.
@@ -296,13 +310,13 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     cd F:\Labfiles\02\Starter\API\
     ```
 
-1. Enter the following command and press Enter to deploy the **api.zip** file to the **API app** you created earlier in this lab:
+1. Enter the following command and press Enter to deploy the **api.zip** file to the **Web app** you created earlier in this lab:
 
     ```powershell
     az webapp deployment source config-zip --resource-group ManagedPlatform --src api.zip --name <name-of-your-api-app>
     ```
 
-    > **Note**: Replace the **\<name-of-your-api-app\>** placeholder with the name of the API app that you created earlier in this lab. You recently queried this app’s name in the previous steps.
+    > **Note**: Replace the **\<name-of-your-api-app\>** placeholder with the name of the Web app that you created earlier in this lab. You recently queried this app’s name in the previous steps.
 
 1. Wait for the deployment to complete before you move forward with this lab.
 
@@ -310,17 +324,17 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1. In the **Resource groups** blade, locate and select the **ManagedPlatform** resource group that you created earlier in this lab.
 
-1. In the **ManagedPlatform** blade, select the **imgapi\*** *API App* that you created earlier in this lab.
+1. In the **ManagedPlatform** blade, select the **imgapi\*** *Web app* that you created earlier in this lab.
 
-1. In the **API App** blade, select the **Browse** button.
+1. In the **Web app** blade, select the **Browse** button.
 
-1. Perform a **GET** request to the root of the website and observe the JSON array that is returned. This array should contain the URL for your single uploaded image in your **Azure Storage** account.
+1. The browser will open a new tab that performs a **GET** request to the root of the website. Observe the JSON array that is returned. This array should contain the URL for your single uploaded image in your **Azure Storage** account.
 
 1. Return to your browser window showing the **Azure portal**.
 
 #### Review
 
-In this exercise, you created an API App in Azure and then deployed your ASP.NET Core web application to the API App by using the Azure CLI and Kudu’s zip deployment utility.
+In this exercise, you created a Web app in Azure and then deployed your ASP.NET Core web application to the Web app by using the Azure CLI and Kudu’s zip deployment utility.
 
 ### Exercise 2: Build a front-end web application by using Azure Web Apps
 
@@ -337,26 +351,32 @@ In this exercise, you created an API App in Azure and then deployed your ASP.NET
 1.  In the **Web App** blade, select **Create**.
 
 1.  In the second **Web App** blade, perform the following actions:
-    
+
     1.  In the **App name** field, enter **imgweb\[*your name in lowercase*\]**.
-    
+
     1.  Leave the **Subscription** field set to its default value.
-    
+
     1.  In the **Resource group** section, select **Use existing**, and then select **ManagedPlatform**.
-    
+
     1.  In the **Publish** section, select **Code**.
-    
+
     1.  In the **Runtime stack** section, select **.NET Core 2.2**.
-    
-    1.  In the **OS** section, select **Linux**.
+
+    1.  In the **OS** section, select **Windows**.
 
     1. In the **Region** drop-down list, select **East US**
-    
-    1.  Leave the **Plan (East US)** field set to its default value.
-    
+
+    1.  Leave the **Windows Plan (East US)** field set to its default value.
+
     1.  Leave the **Sku and size** field set to its default value.
-    
-    1.  Select **Review and create**.
+
+    1.  Select **Next: Monitoring**.
+
+1.  In the **Monitoring** tab, perform the following actions:
+
+    1.  In the **Enable Application Insights** section, select **No**.
+
+    1.  Select **Review + Create**.
 
 1. In the **Review and create** tab, observe the settings then click **Create**.
 
@@ -373,21 +393,21 @@ In this exercise, you created an API App in Azure and then deployed your ASP.NET
 1.  In the **Web App** bladeblade, on the left side of the blade in the **Settings** section, select the **Configuration** link.
 
 1.  In the **Configuration** section, perform the following actions:
-    
+
     1.  Select the **Application settings** tab.
-    
+
     1.  Select **+ New application setting**.
-    
+
     1.  In the **Add/Edit application setting** popup that appears, in the **Name** field, enter **ApiUrl**.
-    
-    1.  In the **Value** field, enter the API app **URL** you copied earlier in this lab.
+
+    1.  In the **Value** field, enter the Web app **URL** you copied earlier in this lab.
 
         > **Note**: Make sure you include the protocol (ex. *https://*) in the URL you copy into the value field for this application setting.
-    
+
     1.  Leave the **deployment slot setting** field set to its default value.
 
     1.  Select **OK** to close the popup and return to the **Configuration** section.
-    
+
     1.  Select **Save** at the top of the blade to persist your settings.
 
 1.  Wait for your application settings to persist before you move forward with the lab.
@@ -415,13 +435,13 @@ In this exercise, you created an API App in Azure and then deployed your ASP.NET
     ```
 
 1.  In the browser window that appears, perform the following actions:
-    
+
     1.  Enter the **email address** for your Microsoft account.
-    
+
     1.  Select **Next**.
-    
+
     1.  Enter the **password** for your Microsoft account.
-    
+
     1.  Select **Sign in**.
 
 1. Return to the currently open **Command Prompt** application. Wait for the sign-in process to finish.
@@ -471,11 +491,11 @@ In this exercise, you created an API App in Azure and then deployed your ASP.NET
 1. Observe the list of images in the gallery. The gallery should list a single image that was uploaded to Azure Storage earlier in the lab.
 
 1. At the top of the **Contoso Photo Gallery** webpage, locate the **Upload a new image** section and perform the following actions:
-    
+
     1.  Select **Browse**.
-    
+
     1.  In the File Explorer dialog box that opens, go to **Allfiles (F):\\Allfiles\\Labs\\02\\Starter\\Images**, select the **bahnmi.jpg** file, and then select **Open**.
-    
+
     1.  Select **Upload**.
 
 1. Observe that the list of gallery images has been updated with your new image.
@@ -507,11 +527,11 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
   > **Note**: Each tab represents a step in the workflow to create a new **function app**. At any time, you can select **Review + create** to skip the remaining tabs.
 
 1.  In the **Basics** tab, perform the following actions:
-    
+
     1.  Leave the **Subscription** text box set to its default value.
-    
-    1.  In the **Resource group** section, **Use existing**, and then select **ManagedResourceGroup** from the list.
-    
+
+    1.  In the **Resource group** section, **Use existing**, and then select **ManagedPlatform** from the list.
+
     1.  In the **Function app name** text box, enter **imgfunc\[your name in lowercase\]**.
 
     1.  In the **Publish** section, select **Code**.
@@ -519,16 +539,20 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
     1.  In the **Runtime stack** drop-down list, select **.NET Core**.
 
     1.  In the **Region** drop-down list, select the **East US** region.
-    
+
     1.  Select **Next: Hosting**.
 
 1.  In the **Hosting** tab, perform the following actions:
 
-    1.  In the **Storage account** drop-down list, select the **imgstor\*** Storage account that you created earlier in this lab.
-
     1.  In the **Operating System** section, select **Windows**.
 
-    1.  In the **Plan type** drop-down list, select the **Consumption** option.
+    1.  In the **Plan type** drop-down list, select the **App service plan** option.
+
+    1.  Leave the **Windows Plan (East US)** field set to its default value.
+
+    1.  In the **Storage account** drop-down list, select the **imgstor\*** Storage account that you created earlier in this lab.
+
+        > **Note**: Changing the plan type or operating system resets the selected Storage account field. This setting must be changed last.
 
     1.  Select **Next: Monitoring**.
 
@@ -557,21 +581,21 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 1.  In the **Platform features** tab, select the **Configuration** link located in the **General Settings** section.
 
 1.  In the **Configuration** section, perform the following actions:
-    
+
     1.  Select the **Application settings** tab.
-    
+
     1.  Select **+ New application setting**.
-    
+
     1.  In the **Add/Edit application setting** popup that appears, in the **Name** field, enter **DOTNET_SKIP_FIRST_TIME_EXPERIENCE**.
-    
+
     1.  In the **Value** field, enter **true**.
 
         > **Note**: The ``DOTNET_SKIP_FIRST_TIME_EXPERIENCE`` application setting tells .NET Core to disable it's built-in NuGet package caching mechanisms. On a temporary compute instance, this would effectively be a waste of time and cause build issues with your Azure Function.
-    
+
     1.  Leave the **deployment slot setting** field set to its default value.
 
     1.  Select **OK** to close the popup and return to the **Configuration** section.
-    
+
     1.  Select **Save** at the top of the blade to persist your settings.
 
 1.  Wait for your application settings to persist before you move forward with the lab.
@@ -587,17 +611,17 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 1.  In the **Function App** blade, select **+ New function**.
 
 1.  In the **New Azure Function** quickstart, perform the following actions:
-    
+
     1.  Under the **Choose a Development Environment** header, select **In-Portal**.
-    
+
     1.  Select **Continue**.
-    
+
     1.  Under the **Create a Function** header, select **More templates…**.
-    
+
     1.  Select **Finish and view templates**.
-    
+
     1.  In the **Templates** list, select **Azure Blob Storage trigger**.
-    
+
     1.  In the **Extensions not Installed** window, select **Install**.
 
         > **Note**: It can take up to two minutes to install the extensions needed to work with Azure Storage blobs. If the portal does not refresh, simply close the **Extensions not Installed** pop-up window and select **Azure Blob Storage trigger** again.
@@ -634,7 +658,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 1. In the editor, select **Save** button to persist your changes to the configuration.
 
     > **Note**: This **.proj** file contains the NuGet package reference necessary to import the [SixLabors.ImageSharp](https://www.nuget.org/packages/SixLabors.ImageSharp/1.0.0-beta0006) package.
-    
+
 1.  Back in the **View files** tab, select the **function.json** file to view the editor for the function’s configuration.
 
 1. In the JSON editor, observe the current configuration:
@@ -658,22 +682,22 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
     ```json
     {
-      "bindings": [
-        {
-          "name": "inputBlob",
-          "type": "blobTrigger",
-          "direction": "in",
-          "path": "images/{name}",
-          "connection": "AzureWebJobsStorage"
-        },
-        {
-          "type": "blob",
-          "name": "outputBlob",
-          "path": "images-thumbnails/{name}",
-          "connection": "AzureWebJobsStorage",
-          "direction": "out"
-        }
-      ]
+        "bindings": [
+            {
+                "name": "inputBlob",
+                "type": "blobTrigger",
+                "direction": "in",
+                "path": "images/{name}",
+                "connection": "AzureWebJobsStorage"
+            },
+            {
+                "type": "blob",
+                "name": "outputBlob",
+                "path": "images-thumbnails/{name}",
+                "connection": "AzureWebJobsStorage",
+                "direction": "out"
+            }
+        ]
     }
     ```
 
@@ -704,7 +728,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
     using SixLabors.ImageSharp.Processing;
     using SixLabors.ImageSharp.Formats.Jpeg;
     using SixLabors.Primitives;
-    
+
     public static void Run(Stream inputBlob, Stream outputBlob, string name, ILogger log)
     {
     }
@@ -748,7 +772,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
     using SixLabors.ImageSharp.Processing;
     using SixLabors.ImageSharp.Formats.Jpeg;
     using SixLabors.Primitives;
-    
+
     public static void Run(Stream inputBlob, Stream outputBlob, string name, ILogger log)
     {
         log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {inputBlob.Length} Bytes");
@@ -815,27 +839,27 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 1. Observe the list of images in the gallery. The list of thumbnails should now be updated with a new thumbnail image.
 
 1. At the top of the **Contoso Photo Gallery** webpage, locate the **Upload a new image** section and perform the following actions:
-    
+
     1.  Select **Browse**.
-    
+
     1.  In the File Explorer dialog box that opens, go to **Allfiles (F):\\Allfiles\\Labs\\02\\Starter\\Images**, select the **blt.jpg** file, and then select **Open**.
-    
+
     1.  Select **Upload**.
 
 1. At the top of the **Contoso Photo Gallery** webpage, locate the **Upload a new image** section and perform the following actions:
-    
+
     1.  Select **Browse**.
-    
+
     1.  In the File Explorer dialog box that opens, go to **Allfiles (F):\\Allfiles\\Labs\\02\\Starter\\Images**, select the **sub.jpg** file, and then select **Open**.
-    
+
     1.  Select **Upload**.
 
 1. At the top of the **Contoso Photo Gallery** webpage, locate the **Upload a new image** section and perform the following actions:
-    
+
     1.  Select **Browse**.
-    
+
     1.  In the File Explorer dialog box that opens, go to **Allfiles (F):\\Allfiles\\Labs\\02\\Starter\\Images**, select the **burger.jpg** file, and then select **Open**.
-    
+
     1.  Select **Upload**.
 
 1. Observe that the list of gallery images has been updated with your new image.
@@ -846,7 +870,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 In this exercise, you created a background processing job in Azure Functions to handle the computationally intensive task of modifying and resizing images.
 
-### Exercise 4: Clean up subscription 
+### Exercise 4: Clean up subscription
 
 #### Task 1: Open Cloud Shell
 
@@ -855,9 +879,9 @@ In this exercise, you created a background processing job in Azure Functions to 
     > **Note**: The **Cloud Shell** icon is represented by a greater than symbol and underscore character.
 
 1.  If this is your first time opening the **Cloud Shell** by using your subscription, a **Welcome to Azure Cloud Shell Wizard** will appear that allows you to configure **Cloud Shell** for first-time usage. Perform the following actions in the wizard:
-    
+
     1.  A dialog box will appear that prompts you to create a new Storage Account to begin using the shell. Accept the default settings and select **Create storage**.
-    
+
     1.  Wait for the **Cloud Shell** to finish its first-time setup procedures before moving forward with the lab.
 
     > **Note**: If you do not see the configuration options for the **Cloud Shell**, this is most likely because you are using an existing subscription with this course's labs. The labs are written from the presumption that you are using a new subscription.

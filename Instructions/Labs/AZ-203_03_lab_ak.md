@@ -21,7 +21,7 @@ Microsoft updates this training course as soon as the community brings needed ch
 #### Sign in to the lab virtual machine
 
 Sign in to your **Windows 10** virtual machine using the following credentials:
-    
+
 -   **Username**: Admin
 
 -   **Password**: Pa55w.rd
@@ -31,7 +31,7 @@ Sign in to your **Windows 10** virtual machine using the following credentials:
 #### Review installed applications
 
 Observe the taskbar located at the bottom of your **Windows 10** desktop. The taskbar contains the icons for the applications you will use in this lab:
-    
+
 -   Microsoft Edge
 
 -   File Explorer
@@ -92,18 +92,18 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  In the **New Redis Cache** blade, perform the following actions:
 
-    1.  IN the **DNS name** field, enter the value **polyrediscache\[your name in lowercase\]** 
+    1.  IN the **DNS name** field, enter the value **polyrediscache\[your name in lowercase\]**
 
     1.  Leave the **Subscription** drop-down list set to its default value.
-    
+
     1.  In the **Resource group** section, select **Create new**, enter **PolyglotData**, and then select **OK**.
-    
+
     1.  In the **Location** drop-down list, select the **East US** option.
 
     1.  In the **Pricing tier** list, select the **Basic C0 (250MB Cache)** option.
 
     1.  In the **Unblock port 6379 (not SSL encrypted)** section, ensure the checkbox is not selected.
-    
+
     1. Select **Create**.
 
 1.  Wait for the creation task to complete before you move forward with this lab.
@@ -135,19 +135,19 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     > **Note**: Each tab represents a step in the workflow to create a new **Azure SQL Database server**. At any time, you can select **Review + create** to skip the remaining tabs.
 
 1.  In the **Basics** tab, perform the following actions:
-    
+
     1.  Leave the **Subscription** drop-down list set to its default value.
-    
+
     1.  In the **Resource group** section, select **PolyglotData** from the list.
-    
+
     1.  In the **Server name** field, enter the value **polysqlsrvr\[your name in lowercase\]**.
-    
+
     1.  In the **Location** drop-down list, select the **(US) East US** option.
-    
+
     1.  In the **Server admin login** field, enter the value **testuser**.
-    
+
     1.  In the **Password** field, enter the value **TestPa$$w0rd**.
-    
+
     1.  In the **Confirm password** field, enter the value **TestPa$$w0rd** again.
 
     1.  Select **Next: Networking >**.
@@ -155,7 +155,7 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 1.  In the **Networking** tab, perform the following actions:
 
     1. In the **Allow Azure services and resources to access this server** section, select **Yes**.
-    
+
     1.  Select **Review + Create**.
 
 1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
@@ -179,21 +179,21 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     > **Note**: Each tab represents a step in the workflow to create a new **Azure Cosmos DB account**. At any time, you can select **Review + create** to skip the remaining tabs.
 
 1.  In the **Basics** tab, perform the following actions:
-    
+
     1.  Leave the **Subscription** list set to its default value.
-    
+
     1.  In the **Resource group** section, select **PolyglotData** from the list.
-    
+
     1.  In the **AccountName** field, enter **polycosmos\[your name in lowercase\]**.
-    
+
     1.  In the **API** drop-down list, select the **Core (SQL)** option.
-    
+
     1.  In the **Location** drop-down list, select the **East US** region.
-    
+
     1.  In the **Geo-Redundancy** section, select the **Disable** option.
-    
+
     1.  In the **Multi-region Writes** section, select the **Disable** option.
-    
+
     1.  Select **Review + Create**.
 
 1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
@@ -227,23 +227,23 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     > **Note**: Each tab represents a step in the workflow to create a new **Azure Storage Account**. At any time, you can select **Review + create** to skip the remaining tabs.
 
 1.  In the **Basics** tab, perform the following actions:
-    
+
     1.  Leave the **Subscription** list set to its default value.
-    
+
     1.  In the **Resource group** section, select **PolyglotData** from the list.
-    
+
     1.  In the **Storage account name** field, enter **polystor\[your name in lowercase\]**.
-    
+
     1.  In the **Location** drop-down list, select the **East US** region.
-    
+
     1.  In the **Performance** section, select **Standard**.
-    
+
     1.  In the **Account kind** drop-down list, select **StorageV2 (general purpose v2)**.
-    
+
     1.  In the **Replication** drop-down list, select **Locally-redundant storage (LRS)**.
-    
+
     1.  In the **Access tier (default)** section, ensure that **Hot** is selected.
-    
+
     1.  Select **Review + Create**.
 
 1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
@@ -271,11 +271,11 @@ In this exercise, you created all the Azure resources that you will need for a p
 1.  In the **Containers** section, select **+ Container**.
 
 1.  In the **New container** pop-up, perform the following actions:
-    
+
     1.  In the **Name** field, enter **images**.
-    
+
     1.  In the **Public access level** drop-down list, select **Blob (anonymous read access for blobs only)**.
-    
+
     1.  Select **OK**.
 
 1.  Back in the **Containers** section, select the newly created **images** container.
@@ -289,13 +289,13 @@ In this exercise, you created all the Azure resources that you will need for a p
 1.  At the top of the blade, select **Upload**.
 
 1.  In the **Upload blob** pop-up, perform the following actions:
-    
+
     1.  In the **Files** section, select the **Folder** icon.
-    
+
     1.  In the File Explorer dialog box, go to **Allfiles (F):\\Allfiles\\Labs\\03\\Starter\\Images**, select all fourty-two **.jpg** image files, and then select **Open**.
-    
+
     1.  Ensure that **Overwrite if files already exist** is selected.
-    
+
     1.  Select **Upload**.
 
 1. Wait for all of the blobs to be uploaded before you continue with this lab.
@@ -313,11 +313,11 @@ In this exercise, you created all the Azure resources that you will need for a p
 1.  In the **Containers** section, select **+ Container**.
 
 1.  In the **New container** pop-up, perform the following actions:
-    
+
     1.  In the **Name** field, enter **databases**.
-    
+
     1.  In the **Public access level** drop-down list, select **Private (no anonymous access)**.
-    
+
     1.  Select **OK**.
 
 1.  Back in the **Containers** section, select the newly created **databases** container.
@@ -325,13 +325,13 @@ In this exercise, you created all the Azure resources that you will need for a p
 1.  In the **Container** blade, select **Upload**.
 
 1.  In the **Upload blob** pop-up, perform the following actions:
-    
+
     1.  In the **Files** section, select the **Folder** icon.
-    
+
     1.  In the File Explorer dialog box, go to **Allfiles (F):\\Allfiles\\Labs\\03\\Starter**, select the **AdventureWorks.bacpac** file, and then select **Open**.
-    
+
     1.  Ensure that **Overwrite if files already exist** is selected.
-    
+
     1.  Select **Upload**.
 
 1. Wait for the blob to be uploaded before you continue with this lab.
@@ -352,9 +352,9 @@ In this exercise, you created all the Azure resources that you will need for a p
 
     1.  Select the **Storage** option.
 
-    1.  In the **Storage accounts** blade that appears, select the **polystor\*** storage account that you created earlier in this lab. 
+    1.  In the **Storage accounts** blade that appears, select the **polystor\*** storage account that you created earlier in this lab.
 
-    1.  In the **Containers** blade that appears, select the **databases** container that you created earlier in this lab. 
+    1.  In the **Containers** blade that appears, select the **databases** container that you created earlier in this lab.
 
     1.  In the **Container** blade that appears, select the **AdventureWorks.bacpac** blob that you created earlier in this lab and then select **Select** to close the blade.
 
@@ -365,9 +365,9 @@ In this exercise, you created all the Azure resources that you will need for a p
     1.  Leave the **Collation** field set to its default value.
 
     1.  In the **Server admin login** field, enter the value **testuser**.
-    
+
     1.  In the **Password** field, enter the value **TestPa$$w0rd**.
-    
+
     1.  Select **OK**.
 
 1. Wait for the database to be created before you continue with this lab.
@@ -477,7 +477,8 @@ In this exercise, you imported all of the resources you will use with your web a
     ```json
     "ConnectionStrings": {
         "AdventureWorksSqlContext": "",
-        ...
+        "AdventureWorksCosmosContext": "",
+        "AdventureWorksRedisContext": ""
     },
     ```
 
@@ -494,7 +495,8 @@ In this exercise, you imported all of the resources you will use with your web a
     ```json
     "Settings": {
         "BlobContainerUrl": "",
-        ...
+        "CartAvailable": false,
+        "UniqueIdentifier": "az:dev:student"
     }
     ```
 
@@ -604,7 +606,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
 
 1.  Select the **Trash Can** icon to dispose of the currently open terminal and any associated processes.
 
-#### Task 2: Create .NET class 
+#### Task 2: Create .NET class
 
 1.  In the **Explorer** pane of the Visual Studio Code window, expand the **AdventureWorks.Migrate** project.
 
@@ -658,7 +660,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
 
     > **Note**: It is important that you use your updated connection string here. The original connection string copied from the portal will not have the username and password necessary to connect to the SQL database.
 
-1.  Within the **Program** class, enter the following line of code to create a new string constant named **cosmosDBConnectionString**: 
+1.  Within the **Program** class, enter the following line of code to create a new string constant named **cosmosDBConnectionString**:
 
     ```cs
     private const string cosmosDBConnectionString = "";
@@ -729,7 +731,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
     ```powershell
     cd .\AdventureWorks.Migrate
     ```
-    
+
 1.  In the command prompt,  enter the following command and press Enter to build the .NET Core web application:
 
     ```powershell
@@ -804,7 +806,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
     ```powershell
     cd .\AdventureWorks.Migrate
     ```
-    
+
 1.  In the command prompt, enter the following command and press Enter to build the .NET Core web application:
 
     ```powershell
@@ -1064,7 +1066,7 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
     ```powershell
     cd .\AdventureWorks.Context
     ```
-    
+
 1.  In the command prompt, enter the following command and press Enter to build the .NET Core web application:
 
     ```powershell
@@ -1085,9 +1087,9 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
 
     ```json
     "ConnectionStrings": {
-        ...
+        "AdventureWorksSqlContext": "<sql-connection-string>",
         "AdventureWorksCosmosContext": "",
-        ...
+        "AdventureWorksRedisContext": ""
     },
     ```
 
@@ -1165,7 +1167,7 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
 1.  On the **Touring-1000** product detail page, perform the following actions:
 
     1.  In the **Select options** list, select **Touring-1000 Yellow, 50, $2,384.07**.
-    
+
     1.  Select **Add to Cart**.
 
 1.  Observe that the checkout functionality is still disabled.
@@ -1287,7 +1289,7 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
 
     ```cs
     public AdventureWorksRedisContext(string connectionString)
-    {        
+    {
     }
     ```
 
@@ -1302,12 +1304,12 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
 
     ```cs
     public async Task AddProductToCartAsync(string uniqueIdentifier, Product product)
-    {        
+    {
     }
     ```
 
 1.  Within the **AddProductToCartAsync** method, add the following blocks of code to get the current value from a key, create a new list if one does not already exists, add the product to the list, and then store the list as the new value for the key in the database:
-    
+
     ```cs
     RedisValue result = await _database.StringGetAsync(uniqueIdentifier);
     List<Product> products = new List<Product>();
@@ -1325,13 +1327,13 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
 
     ```cs
     public async Task<List<Product>> GetProductsInCartAsync(string uniqueIdentifier)
-    {        
+    {
     }
     ```
 
 1.  Within the **GetProductsInCartAsync** method, add the following lines of code to get the list from the database and parse the JSON value into a collection of **Product** instances:
-    
-    ```    
+
+    ```cs
     string json = await _database.StringGetAsync(uniqueIdentifier);
     List<Product> products = JsonConvert.DeserializeObject<List<Product>>(json ?? "[]");
     return products;
@@ -1341,12 +1343,12 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
 
     ```cs
     public async Task ClearCart(string uniqueIdentifier)
-    {        
+    {
     }
     ```
 
 1.  Within the **ClearCart** method, add the following line of code to remove a key and its associated values from the database:
-    
+
     ```cs
     await _database.KeyDeleteAsync(uniqueIdentifier);
     ```
@@ -1360,7 +1362,7 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
     ```powershell
     cd .\AdventureWorks.Context
     ```
-    
+
 1.  In the command prompt, enter the following command and press Enter to build the .NET Core web application:
 
     ```powershell
@@ -1381,7 +1383,8 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
 
     ```powershell
     "ConnectionStrings": {
-        ...
+        "AdventureWorksSqlContext": "<sql-connection-string>",
+        "AdventureWorksCosmosContext": "<cosmos-connection-string>",
         "AdventureWorksRedisContext": ""
     },
     ```
@@ -1392,9 +1395,9 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
 
     ```powershell
     "Settings": {
-        ...
+        "BlobContainerUrl": "<blob-container-base-uri>",
         "CartAvailable": false,
-        ...
+        "UniqueIdentifier": "az:dev:student"
     }
     ```
 
@@ -1474,7 +1477,7 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
 1.  On the **Mountain-400-W** product detail page, perform the following actions:
 
     1.  In the **Select options** list, select **Mountain-400-W Silver, 40, $769.49**.
-    
+
     1.  Select **Add to Cart**.
 
 1.  On the shopping cart page, observe the contents of the cart and then select **Checkout**.
@@ -1493,7 +1496,7 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
 
 In this exercise, you used C# code to store and retrieve data from an Azure Cache for Redis store.
 
-### Exercise 7: Clean up subscription 
+### Exercise 7: Clean up subscription
 
 #### Task 1: Open Azure Cloud Shell
 
@@ -1502,9 +1505,9 @@ In this exercise, you used C# code to store and retrieve data from an Azure Cach
     > **Note**: The **Cloud Shell** icon is represented by a greater than symbol and underscore character.
 
 1.  If this is your first time opening the **Cloud Shell** by using your subscription, a **Welcome to Azure Cloud Shell Wizard** will appear that allows you to configure **Cloud Shell** for first-time usage. Perform the following actions in the wizard:
-    
+
     1.  A dialog box will appear that prompts you to create a new Storage Account to begin using the shell. Accept the default settings and select **Create storage**.
-    
+
     1.  Wait for the **Cloud Shell** to finish its first-time setup procedures before moving forward with the lab.
 
     > **Note**: If you do not see the configuration options for the **Cloud Shell**, this is most likely because you are using an existing subscription with this course's labs. The labs are written from the presumption that you are using a new subscription.
@@ -1527,7 +1530,7 @@ In this exercise, you used C# code to store and retrieve data from an Azure Cach
     ```powershell
     az group delete --name PolyglotData --no-wait --yes
     ```
-    
+
 1.  Close the **Cloud Shell** pane at the bottom of the portal.
 
 #### Task 3: Close active applications
