@@ -120,37 +120,35 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  In the **Access keys** pane, record the value in the **Primary connection string (StackExchange.Redis)** field. You will use this value later in this lab.
 
-#### Task 3: Create an Azure SQL server resource
+#### Task 3: Create an Azure SQL Database
 
 1.  In the navigation pane on the left side of the Azure portal, select **All services**.
 
-1.  In the **All services** blade, select **SQL servers**.
+1.  In the **All services** blade, select **SQL Database**.
 
-1.  In the **SQL servers** blade, view your list of SQL server instances.
-
-1.  At the top of the **SQL servers** blade, select **+ Add**.
-
-1.  In the **Create SQL Database Server** blade, observe the tabs at the top of the blade, such as **Basics**, **Networking** and **Additional settings**.
-
-    > **Note**: Each tab represents a step in the workflow to create a new **Azure SQL Database server**. At any time, you can select **Review + create** to skip the remaining tabs.
+1.  In the **Create SQL Database** blade, view your list of SQL server instances.
 
 1.  In the **Basics** tab, perform the following actions:
 
     1.  Leave the **Subscription** drop-down list set to its default value.
 
     1.  In the **Resource group** section, select **PolyglotData** from the list.
+    
+    1.  In the **Database name** field, enter the value **polysqldb\[your name in lower case\]**.
 
-    1.  In the **Server name** field, enter the value **polysqlsrvr\[your name in lowercase\]**.
-
-    1.  In the **Location** drop-down list, select the **(US) East US** option.
+    1.  In the **Server** field, select **Create new**
+    
+    1.  In the **New Server** blade, on the **Server name** field enter the value **polysqlsrvr\[your name in lowercase\]**.
 
     1.  In the **Server admin login** field, enter the value **testuser**.
 
     1.  In the **Password** field, enter the value **TestPa$$w0rd**.
 
     1.  In the **Confirm password** field, enter the value **TestPa$$w0rd** again.
-
-    1.  Select **Next: Networking >**.
+    
+    1.  In the **Location** drop-down list, select the **(US) East US** option and click **OK**.
+    
+    1. Leave the other values by default and select **Next: Networking >**.
 
 1.  In the **Networking** tab, perform the following actions:
 
@@ -159,8 +157,6 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     1.  Select **Review + Create**.
 
 1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
-
-1.  Select **Create** to create the Azure SQL Database server by using your specified configuration.
 
 1.  Wait for the creation task to complete before you move forward with this lab.
 
